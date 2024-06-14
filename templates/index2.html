@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment & Emotion Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.0/socket.io.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div id="sentiment-analysis" class="content">
+            <h1>😊 Sentiment  Emotion Detection 😊</h1>
+            <h2>Sentiment Analysis</h2>
+            <textarea id="text-input" placeholder="Enter text here..."></textarea>
+            <button onclick="predictSentiment()">Predict Sentiment</button>
+            <p id="sentiment-result">
+
+            </p>
+        </div>
+        <div id="emotion-detection" class="content">
+            <h2>Emotion Detection</h2>
+            <div id="camera-feed">
+                <img id="video-feed" src="{{ url_for('video_feed') }}" width="640" height="480">
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
